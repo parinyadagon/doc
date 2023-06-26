@@ -3,6 +3,7 @@
 
 #docker mongo
 ##docker-compose.yaml
+```
 version: "3.8"
 services:
   mongo:
@@ -32,3 +33,4 @@ services:
     restart: unless-stopped
     ports:
       - "8081:8081"
+```
