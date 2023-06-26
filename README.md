@@ -39,9 +39,13 @@ command shell in container
 ```
 docker exec -it <container-name> mongosh -u "<username>" -p "<password>"
 ```
-command in mongo
 
-### show all database
+## command in mongo
 ```
-show databases
+show databases                             //show all database
+db                                         //current databse
+use <database-name>                        //create or switch database
+db.dropDatabase()                          //drop
+db.createCollection('<collection-name>')   //create collection
+show collections                           //show collections
 ```
