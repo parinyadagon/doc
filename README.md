@@ -39,3 +39,9 @@ command shell in container
 ```
 docker exec -it <container-name> mongosh -u "<username>" -p "<password>"
 ```
+command in mongo
+
+### show all database
+```
+show databases
+```
