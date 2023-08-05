@@ -12,3 +12,5 @@ create project command
 ```
 npx typescript-express-starter "project name"
 ```
+### awesome-vite
+https://github.com/vitejs/awesome-vite
