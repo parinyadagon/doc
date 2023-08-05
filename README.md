@@ -1,3 +1,6 @@
-# doc
+# Bucket
 
-## react-vite  https://github.com/RicardoValdovinos/vite-react-boilerplate.git
+### vite-react-boilerplate
+```
+git clone  https://github.com/RicardoValdovinos/vite-react-boilerplate.git
+```
