@@ -5,35 +5,64 @@
 docker-compose.yaml
 ```
 version: "3.8"
+
 services:
   mongo:
     image: mongo:latest
     container_name: mongo
     environment:
-        - MONGO_INITDB_ROOT_USERNAME=root
-        - MONGO_INITDB_ROOT_PASSWORD=password
-    restart: unless-stopped
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin
     ports:
-      - "27017:27017"
+      - "0.0.0.0:27017:27017"
+    networks:
+      - MONGO
     volumes:
-      - ./database/db:/data/db
-      - ./database/dev.archive:/Databases/dev.archive
-      - ./database/production:/Databases/production
+      - type: volume
+        source: MONGO_DATA
+        target: /data/db
+      - type: volume
+        source: MONGO_CONFIG
+        target: /data/configdb
   mongo-express:
-    image: mongo-express
-    container_name: mexpress
+    image: mongo-express:latest
+    container_name: mongo-express
     environment:
-      - ME_CONFIG_MONGODB_ADMINUSERNAME=root
-      - ME_CONFIG_MONGODB_ADMINPASSWORD=password
-      - ME_CONFIG_MONGODB_URL=mongodb://root:password@mongo:27017/?authSource=admin
-      - ME_CONFIG_BASICAUTH_USERNAME=mexpress
-      - ME_CONFIG_BASICAUTH_PASSWORD=mexpress
-    links:
-      - mongo
-    restart: unless-stopped
+      ME_CONFIG_MONGODB_ADMINUSERNAME: admin
+      ME_CONFIG_MONGODB_ADMINPASSWORD: admin
+      ME_CONFIG_MONGODB_SERVER: mongo
+      ME_CONFIG_MONGODB_PORT: "27017"
     ports:
-      - "8081:8081"
+      - "0.0.0.0:8081:8081"
+    networks:
+      - MONGO
+    depends_on:
+      - mongo
+    volumes:
+      - type: bind
+        source: ./wait-for.sh
+        target: /wait-for.sh
+    entrypoint:
+      - /bin/sh
+      - /wait-for.sh
+      - mongo:27017
+      - --
+      - tini
+      - --
+      - /docker-entrypoint.sh
+
+networks:
+  MONGO:
+    name: MONGO
+
+volumes:
+  MONGO_DATA:
+    name: MONGO_DATA
+  MONGO_CONFIG:
+    name: MONGO_CONFIG
 ```
+wait-for
+https://github.com/eficode/wait-for
 
 command shell in container
 ```
