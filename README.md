@@ -17,3 +17,6 @@ https://github.com/vitejs/awesome-vite
 
 ### animation
 https://github.com/wellyshen/use-web-animations
+
+### animation scroll
+https://github.com/michalsnik/aos
