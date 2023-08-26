@@ -14,3 +14,6 @@ npx typescript-express-starter "project name"
 ```
 ### awesome-vite
 https://github.com/vitejs/awesome-vite
+
+### animation
+https://github.com/wellyshen/use-web-animations
