@@ -23,3 +23,7 @@ https://github.com/michalsnik/aos
 
 ### user management
 https://github.com/yasser-mas/nodejs-user-management
+
+
+### aliases absolute path
+https://medium.com/@jimcraft123hd/setting-up-path-alias-in-typescript-and-tsc-build-without-error-9f1dbc0bccd2
