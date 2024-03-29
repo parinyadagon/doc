@@ -27,3 +27,15 @@ https://github.com/yasser-mas/nodejs-user-management
 
 ### aliases absolute path
 https://medium.com/@jimcraft123hd/setting-up-path-alias-in-typescript-and-tsc-build-without-error-9f1dbc0bccd2
+
+### next library 
+nextui https://nextui.org/
+
+shadcn https://ui.shadcn.com/
+
+aceternity https://ui.aceternity.com/
+
+react-hot-toast https://react-hot-toast.com/
+
+usehooks https://usehooks.com/
+
