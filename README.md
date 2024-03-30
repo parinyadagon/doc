@@ -28,6 +28,9 @@ https://github.com/yasser-mas/nodejs-user-management
 ### aliases absolute path
 https://medium.com/@jimcraft123hd/setting-up-path-alias-in-typescript-and-tsc-build-without-error-9f1dbc0bccd2
 
+### express library
+express-validator https://express-validator.github.io/docs
+
 ### next library 
 nextui https://nextui.org/
 
